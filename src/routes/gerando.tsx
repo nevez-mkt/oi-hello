@@ -1,1 +1,0 @@
-import { createFileRoute } from "@tanstack/react-router"; import { GenerationScreen } from "../components/digitalos"; export const Route = createFileRoute("/gerando")({ component: GenerationScreen });

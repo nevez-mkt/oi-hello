@@ -1,5 +1,0 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowLeft, CreditCard } from "lucide-react";
-import { Brand, plans } from "../components/digitalos";
-export const Route = createFileRoute("/checkout")({ validateSearch: (s: Record<string, unknown>) => ({ plano: s.plano === "vitalicio" ? "vitalicio" : "mensal" }), component: Checkout });
-function Checkout() { const { plano } = Route.useSearch(); const selected = plans.find((p) => p.id === plano)!; return <main className="checkout-page"><header className="simple-header"><Brand /><Link to="/planos"><ArrowLeft />Trocar plano</Link></header><section className="checkout-card"><p className="eyebrow">CHECKOUT</p><h1>Revise seu acesso</h1><div className="order-line"><span>{selected.name}</span><strong>{selected.price}</strong></div><div className="gateway-placeholder"><CreditCard /><div><h2>Pagamento seguro</h2><p>[INTEGRAÇÃO_COM_GATEWAY_A_DEFINIR]</p></div></div><Link className="button button-block" to="/checkout/processando">Pagar e criar acesso</Link><p className="small">Você receberá retorno visual claro sobre o processamento.</p></section></main> }

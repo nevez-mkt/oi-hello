@@ -1,1 +1,0 @@
-import { createFileRoute } from "@tanstack/react-router"; import { CheckoutState } from "../components/digitalos"; export const Route = createFileRoute("/checkout/sucesso")({ component: () => <CheckoutState state="success" /> });

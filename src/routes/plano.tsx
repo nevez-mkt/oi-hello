@@ -1,3 +1,0 @@
-import { createFileRoute, Link } from "@tanstack/react-router"; import { AppLayout, PlanCards } from "../components/digitalos";
-export const Route = createFileRoute("/plano")({ component: Plan });
-function Plan() { return <AppLayout title="Seu plano"><main className="app-main"><section className="content-section"><p className="eyebrow">ACESSO ATUAL</p><h2>[PLANO_ATUAL]</h2><p className="muted">Gerações restantes no ciclo: [GERAÇÕES_RESTANTES].</p><Link className="button button-small" to="/planos">Ver opções de plano</Link></section><section className="content-section"><p className="eyebrow">OUTRAS OPÇÕES</p><PlanCards checkout /></section></main></AppLayout> }

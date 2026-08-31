@@ -1,3 +1,0 @@
-import { createFileRoute } from "@tanstack/react-router"; import { AppLayout } from "../components/digitalos";
-export const Route = createFileRoute("/perfil")({ component: Profile });
-function Profile() { return <AppLayout title="Conta e acesso"><main className="app-main"><section className="content-section"><p className="eyebrow">SUA CONTA</p><h2>Dados de acesso</h2><label>Nome<input placeholder="[NOME_DO_USUÁRIO]" /></label><label>E-mail<input type="email" placeholder="[EMAIL_DO_USUÁRIO]" /></label><button className="button button-small">Salvar alterações</button></section></main></AppLayout> }
