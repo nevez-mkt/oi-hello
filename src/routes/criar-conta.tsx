@@ -1,0 +1,3 @@
+import { createFileRoute, Link } from "@tanstack/react-router"; import { Brand } from "../components/digitalos";
+export const Route = createFileRoute("/criar-conta")({ component: Account });
+function Account() { return <main className="auth-page"><Brand /><section className="auth-card"><p className="eyebrow">SUA CONTA</p><h1>Crie seu acesso</h1><label>Nome<input placeholder="Como podemos te chamar?" /></label><label>E-mail<input type="email" placeholder="seuemail@exemplo.com" /></label><label>Senha<input type="password" placeholder="Crie uma senha" /></label><Link className="button button-block" to="/onboarding">Criar minha conta</Link><p className="small">Já tem acesso? <Link to="/entrar">Entrar</Link></p></section></main> }

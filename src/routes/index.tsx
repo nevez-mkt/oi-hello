@@ -1,24 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
-
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
-export const Route = createFileRoute("/")({
-  component: Index,
-});
-
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowRight, CheckCircle2, Compass, Sparkles } from "lucide-react";
+import { PlanCards, PublicHeader } from "../components/digitalos";
+export const Route = createFileRoute("/")({ component: Landing });
+function Landing() { return <><PublicHeader /><main><section className="hero"><div><p className="eyebrow">SEU PRÓXIMO PASSO, COM CLAREZA</p><h1>Saia da confusão e transforme sua ideia em um caminho possível.</h1><p>Uma IA que organiza o ponto de partida do seu marketing digital em uma Guia personalizada.</p><Link className="button" to="/quiz-inicial">Fazer minha Guia Agora <ArrowRight /></Link></div><div className="hero-panel"><Compass /><p>[PRÉVIA_DO_GUIA_PERSONALIZADO]</p></div></section><section className="section"><p className="eyebrow">QUANDO FALTA DIREÇÃO</p><h2>Começar no digital não deveria significar se perder.</h2><div className="feature-grid">{["Não saber por onde começar", "Investir energia no lugar errado", "Se perder entre informações demais", "Adiar uma ideia que merece sair do papel"].map((item) => <article className="feature-card" key={item}><CheckCircle2 /><h3>{item}</h3><p>[DESCRIÇÃO_A_REVISAR]</p></article>)}</div></section><section id="como-funciona" className="section tinted"><p className="eyebrow">COMO FUNCIONA</p><h2>Um processo simples, construído ao redor da sua realidade.</h2><div className="steps">{[["01", "Você responde o quiz"], ["02", "A IA analisa seu momento"], ["03", "Você recebe sua Guia"]].map(([n, t]) => <article key={n}><span>{n}</span><h3>{t}</h3><p>[DESCRIÇÃO_DO_PASSO]</p></article>)}</div></section><section className="section proof"><p className="eyebrow">HISTÓRIAS REAIS</p><h2>Espaço reservado para experiências de quem usou.</h2><div className="testimonial-grid">{[1,2,3].map((n) => <article key={n}>[DEPOIMENTO_{n}]<small>[NOME_DEPOIMENTO_{n}]</small></article>)}</div></section><section id="planos" className="section"><p className="eyebrow">ACESSO</p><h2>Escolha como quer começar.</h2><PlanCards checkout /></section><section className="section faq"><p className="eyebrow">DÚVIDAS</p><h2>Perguntas que vamos responder aqui.</h2>{["O que recebo ao gerar uma Guia?", "Preciso já ter um negócio?", "Como funciona o limite de gerações?", "Posso acessar pelo celular?", "Como funcionará o pagamento?"].map((q) => <details key={q}><summary>{q}</summary><p>[RESPOSTA_A_VALIDAR]</p></details>)}</section><section className="final-cta"><Sparkles /><h2>Seu próximo passo pode começar com mais clareza.</h2><Link className="button" to="/quiz-inicial">Fazer minha Guia Agora</Link></section></main></> }

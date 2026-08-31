@@ -1,0 +1,4 @@
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { Brand } from "../components/digitalos";
+export const Route = createFileRoute("/entrar")({ component: Auth });
+function Auth() { return <main className="auth-page"><Brand /><section className="auth-card"><p className="eyebrow">ACESSO</p><h1>Entre no DigitalOS</h1><p className="muted">Use seu e-mail para acessar sua conta.</p><label>E-mail<input type="email" placeholder="seuemail@exemplo.com" /></label><label>Senha<input type="password" placeholder="Sua senha" /></label><Link className="button button-block" to="/dashboard">Entrar</Link><button className="social-button">[LOGIN_SOCIAL_SE_CONFIGURADO]</button><p className="small">Autenticação será conectada ao Supabase. <Link to="/criar-conta">Criar minha conta</Link></p></section></main> }

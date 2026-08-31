@@ -1,0 +1,3 @@
+import { createFileRoute, Link } from "@tanstack/react-router"; import { ArrowLeft, Bookmark } from "lucide-react"; import { AppLayout, GuideContent } from "../components/digitalos";
+export const Route = createFileRoute("/guias/$guideId")({ component: Guide });
+function Guide() { return <AppLayout title="Sua Guia personalizada" action={<button className="secondary-button"><Bookmark />Salvar</button>}><main className="app-main guide-page"><Link className="back-link" to="/historico"><ArrowLeft />Voltar ao histórico</Link><section className="guide-intro"><p className="eyebrow">GUIA · [DATA_DE_GERAÇÃO]</p><h2>[TÍTULO_DA_GUIA]</h2><p>Esta é a estrutura onde o conteúdo gerado pela IA será exibido e salvo.</p></section><GuideContent /></main></AppLayout> }
