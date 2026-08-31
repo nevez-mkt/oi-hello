@@ -14,7 +14,123 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      affiliate_sales: {
+        Row: {
+          affiliate_code: string | null
+          amount_cents: number | null
+          buyer_email: string | null
+          created_at: string
+          id: string
+          plan: string | null
+          status: string
+        }
+        Insert: {
+          affiliate_code?: string | null
+          amount_cents?: number | null
+          buyer_email?: string | null
+          created_at?: string
+          id?: string
+          plan?: string | null
+          status?: string
+        }
+        Update: {
+          affiliate_code?: string | null
+          amount_cents?: number | null
+          buyer_email?: string | null
+          created_at?: string
+          id?: string
+          plan?: string | null
+          status?: string
+        }
+        Relationships: []
+      }
+      guides: {
+        Row: {
+          answers: Json
+          created_at: string
+          id: string
+          sections: Json
+          title: string
+          user_id: string
+        }
+        Insert: {
+          answers?: Json
+          created_at?: string
+          id?: string
+          sections?: Json
+          title: string
+          user_id: string
+        }
+        Update: {
+          answers?: Json
+          created_at?: string
+          id?: string
+          sections?: Json
+          title?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          display_name: string | null
+          id: string
+          onboarded: boolean
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          display_name?: string | null
+          id: string
+          onboarded?: boolean
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          display_name?: string | null
+          id?: string
+          onboarded?: boolean
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      subscriptions: {
+        Row: {
+          created_at: string
+          generations_used: number
+          id: string
+          monthly_limit: number
+          period_start: string
+          plan: string
+          status: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          generations_used?: number
+          id?: string
+          monthly_limit?: number
+          period_start?: string
+          plan?: string
+          status?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          generations_used?: number
+          id?: string
+          monthly_limit?: number
+          period_start?: string
+          plan?: string
+          status?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
